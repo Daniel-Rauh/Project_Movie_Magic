@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Magic</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    {{> navigation}}
+    <section id="hero">
+        {{#each trending}}
+        <a href="/item/{{media_type}}/{{id}}" class="hero-card">
+            <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="">
+            {{#if name}}
+            <h3>{{name}}</h3>
+            {{else}}
+            <h3>{{title}}</h3>
+            {{/if}}
+        </a>
+        {{/each}}
+    </section>
+</body>
+
+</html>

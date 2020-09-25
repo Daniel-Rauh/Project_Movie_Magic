@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Magic</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    {{> navigation}}
+    <section id="details">
+        {{#with item}}
+        <img src="https://image.tmdb.org/t/p/original{{backdrop_path}}" alt="">
+        <div class="info">
+            <div class="rating">
+                <img src="/star.svg" alt="">
+                <h4>{{vote_average}}<span class="small">/10</span></h4>
+                <h5>{{vote_count}}</h5>
+            </div>
+            <div class="favourites">
+                <a href="/addFavourite"><img src="/plus.svg" alt=""></a>
+                <h1>Add to favourites</h1>
+            </div>
+            {{#if name}}
+            <h1>{{name}}</h1>
+            {{else}}
+            <h1>{{title}}</h1>
+            {{/if}}
+            <div class="release">
+                {{#if release_date}}
+                <p>{{release_date}}</p>
+                {{else}}
+                <p>{{first_air_date}}</p>
+                {{/if}}
+                <p>{{status}}</p>
+            </div>
+            <div class="genres">
+                {{#each genres}}
+                <div class="bubble"><p>{{name}}</p></div>
+                {{/each}}
+            </div>
+            <h2>Plot Summary</h2>
+            <p class="summary">{{overview}}</p>
+        </div>
+        {{/with}}
+    </section>
+</body>
+
+</html>
