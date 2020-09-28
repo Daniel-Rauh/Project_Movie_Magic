@@ -197,6 +197,9 @@ h2{
     .search input:nth-of-type(1){
         width: 100px;
     }
+    .search-icon{
+        display: none;
+    }
     nav{
         text-align: center;
         padding: 0 1%;
@@ -228,6 +231,9 @@ h2{
         }
         .search input:nth-of-type(1){
             width: 100px;
+        }
+        .search-icon{
+            display: none;
         }
         nav{
             text-align: center;
